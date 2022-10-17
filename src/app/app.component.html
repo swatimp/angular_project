@@ -26,9 +26,11 @@
         </form>
         <form *ngIf="editPaymentForm">
           <h2>Edit Wallet Details</h2>
-          <p> Name: <input type="text" name="name" [(ngModel)]="editedWallet.name" /></p>
-          <p>Amount: <input type="text" name="amount" [(ngModel)]="editedWallet.amount
-            " /></p>
+          <div class="form-group">
+            <label for="email">Name:</label> <input type="text" name="name" [(ngModel)]="editedWallet.name" class="form-control" /></div>
+            <div class="form-group">
+              <label for="amount">Amount:</label><input type="text" name="amount" [(ngModel)]="editedWallet.amount
+            "  class="form-control" /></div>
           <p>
             <button type="button" class="btn btn-primary mr-2" (click)="updateWallet()">Submit</button>
             <button type="button" class="btn btn-warning" (click)="cancelEdits()">Cancel</button>
