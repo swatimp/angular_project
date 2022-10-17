@@ -10,9 +10,15 @@
       <div class="mt-4">
         <form *ngIf="paymentForm">
           <h2>Add New Wallet</h2>
-          <p>Name: <input type="text" name="name" [(ngModel)]="newWallet.name" required /></p>
-          <p>Amount: <input type="text" name="amount" [(ngModel)]="newWallet.amount" required /></p>
-          <p>Mode: <input type="text" name="mode" [(ngModel)]="newWallet.mode" required/></p>
+          <div class="form-group">
+            <label for="email">Name:</label> <input type="text" name="name" [(ngModel)]="newWallet.name" class="form-control" required /></div
+            >
+            <div class="form-group">
+              <label for="amount">Amount:</label>
+          <input type="text" name="amount" [(ngModel)]="newWallet.amount"  class="form-control" required /></div>
+            <div class="form-group">
+              <label for="amount">Mode:</label> 
+           <input type="text" name="mode" [(ngModel)]="newWallet.mode" class="form-control" required/></div>
           <p>
             <button type="button" class="btn btn-primary mr-2" (click)="saveWallet(newWallet)">Submit</button>
             <button type="button" class="btn btn-warning" (click)="cancelNewWallet()">Cancel</button>
