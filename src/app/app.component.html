@@ -15,7 +15,7 @@
           <p>Amount: <input type="text" name="amount" [(ngModel)]="newWallet.amount" required /></p>
           <p>Mode: <input type="text" name="mode" [(ngModel)]="newWallet.mode" required/></p>
           <p>
-            <button type="button" class="btn btn-primary mr-2" (click)="saveUser(newWallet)">Submit</button>
+            <button type="button" class="btn btn-primary mr-2" (click)="saveWallet(newWallet)">Submit</button>
             <button type="button" class="btn btn-warning" (click)="cancelNewWallet()">Cancel</button>
           </p>
         </form>

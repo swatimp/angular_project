@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
 
   }
 
-  saveUser(wallet: Wallet) {
+  saveWallet(wallet: Wallet) {
     if (this.isNewWallet) {
       // add a new wallet
       this.userService.addWallet(wallet);
