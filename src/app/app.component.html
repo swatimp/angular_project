@@ -5,9 +5,8 @@
 
       <div class="container">
   <div class="row">
-    <div class="col-sm">
+    <div class="col-8">
       <button class="btn btn-success" (click)="showAddWalletForm()">Add New Wallet</button>
-
       <div class="mt-4">
         <form *ngIf="paymentForm">
           <h2>Add New Wallet</h2>
@@ -31,17 +30,20 @@
         </form>
       </div>
     </div>
-    <div class="col-sm">
+    <div class="col-4">
       <table class="table table-bordered table-striped table-hover">
         <tbody>
-          <tr *ngFor="let payment of payments">
-            <mat-card>
-              <mat-card-title>{{ payment.name }}</mat-card-title>
-              <mat-card-actions>
-                <button mat-button color="primary" type="button" class="btn btn-info btn-sm mr-2" (click)="showEditUserForm(payment)">Edit</button>
-                <button  mat-button color="primary" type="button" class="btn btn-danger btn-sm" (click)="removeWallet(payment)">Delete</button>
-              </mat-card-actions>
-            </mat-card>
+          <tr *ngFor="let payment of payments" style="padding:30px ;">
+            <div    style=" border: 1px solid;
+            margin: 5%;">
+             <h1 style="text-align:center;">{{ payment.name }}</h1>             
+                <button mat-button color="primary" type="button" class="btn btn-info btn-sm mr-2" style="
+                padding: 10px;
+    margin: 5%;" (click)="showEditUserForm(payment)">Edit</button>
+                <button  mat-button color="primary" type="button" class="btn btn-danger btn-sm"  style="
+                padding: 10px;
+    margin: 5%;"(click)="removeWallet(payment)">Delete</button>
+            </div>
           </tr>
         </tbody>
       </table>    </div>
