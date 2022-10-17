@@ -1,0 +1,10 @@
+<table class="table table-bordered table-striped table-hover">
+    <tbody>
+      <tr *ngFor="let wallet of wallets">
+       <td  (click)="sortByData(wallet,'name')">{{wallet.name}}</td>
+       <td  (click)="sortByData(wallet, 'amount')">{{wallet.amount}}</td>
+       <td  (click)="sortByData(wallet, 'mode')">{{wallet.mode}}</td>
+       <td  (click)="sortByData(wallet, 'date')">{{wallet.date}}</td>
+      </tr>
+    </tbody>
+  </table>
