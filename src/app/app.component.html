@@ -2,6 +2,36 @@
   <div class="row">
     <div class="col-md-12 mt-4">
       <h1 class="text-center">Payment Application</h1>
+
+      <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <button class="btn btn-success" (click)="showAddWalletForm()">Add New User</button>
+
+      <div class="mt-4">
+        <form *ngIf="paymentForm">
+          <h2>Add New Wallet</h2>
+          <p>Name: <input type="text" name="name" [(ngModel)]="newWallet.name" required /></p>
+          <p>Amount: <input type="text" name="amount" [(ngModel)]="newWallet.amount" required /></p>
+          <p>Mode: <input type="text" name="mode" [(ngModel)]="newWallet.mode" required/></p>
+          <p>
+            <button type="button" class="btn btn-primary mr-2" (click)="saveUser(newWallet)">Submit</button>
+            <button type="button" class="btn btn-warning" (click)="cancelNewWallet()">Cancel</button>
+          </p>
+        </form>
+        <form *ngIf="editPaymentForm">
+          <h2>Edit Wallet Details</h2>
+          <p> Name: <input type="text" name="name" [(ngModel)]="editedWallet.name" /></p>
+          <p>Amount: <input type="text" name="amount" [(ngModel)]="editedWallet.amount
+            " /></p>
+          <p>
+            <button type="button" class="btn btn-primary mr-2" (click)="updateWallet()">Submit</button>
+            <button type="button" class="btn btn-warning" (click)="cancelEdits()">Cancel</button>
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm">
       <table class="table table-bordered table-striped table-hover">
         <tbody>
           <tr *ngFor="let payment of payments">
@@ -14,30 +44,10 @@
             </mat-card>
           </tr>
         </tbody>
-      </table>
-      <button class="btn btn-success" (click)="showAddWalletForm()">Add New User</button>
+      </table>    </div>
+  </div>
+</div>
 
-      <div class="mt-4">
-        <form *ngIf="paymentForm">
-          <h2>Add New User</h2>
-          <p>Name: <input type="text" name="name" [(ngModel)]="newWallet.name" required /></p>
-          <p>Amount: <input type="text" name="amount" [(ngModel)]="newWallet.amount" required /></p>
-          <p>Mode: <input type="text" name="mode" [(ngModel)]="newWallet.mode" required/></p>
-          <p>
-            <button type="button" class="btn btn-primary mr-2" (click)="saveUser(newWallet)">Submit</button>
-            <button type="button" class="btn btn-warning" (click)="cancelNewWallet()">Cancel</button>
-          </p>
-        </form>
-        <form *ngIf="editPaymentForm">
-          <h2>Edit Wallet Details</h2>
-          <p> Name: <input type="text" name="name" [(ngModel)]="editedWallet.name" /></p>
-          <p>Amount: <input type="text" name="amount" [(ngModel)]="editedWallet.Amount" /></p>
-          <p>
-            <button type="button" class="btn btn-primary mr-2" (click)="updateWallet()">Submit</button>
-            <button type="button" class="btn btn-warning" (click)="cancelEdits()">Cancel</button>
-          </p>
-        </form>
-      </div>
     </div>
   </div>
 </div>

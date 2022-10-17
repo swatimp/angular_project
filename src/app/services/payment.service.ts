@@ -17,7 +17,7 @@ export class UserService {
     },
     {
       id: 1,
-      name: 'Durgesh',
+      name: 'Dinesh',
       amount: 'Pal',
       balance:'hhh',
       date:'12-10-2022',
